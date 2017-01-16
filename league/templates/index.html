@@ -1,0 +1,46 @@
+<html>
+	<body>
+		<h2>Team Standings</h2>
+		<table border="1px">
+			<tr>
+				<th>
+					{{context}}
+				</th>
+				<th>
+					Wins
+				</th>
+				<th>
+					Loses
+				</th>
+			</tr>
+			
+			{% for team in context.teams %}
+				<tr>
+					{{team.name}}
+				</tr>
+				<tr>
+					{{team.won}}
+				</tr>
+				<tr>
+					{{team.lost}}
+				</tr>			
+			{% endfor %}
+			
+		</table>
+
+		<h2>Fixtures</h2>
+		<table border="1px">
+			<tr>
+				<th>
+					Team 1
+				</th>
+				<th>
+					Team 2
+				</th>
+				<th>
+					Winner
+				</th>
+			</tr>
+		</table>
+	</body>
+</html>
