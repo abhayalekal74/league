@@ -32,7 +32,8 @@ class User(models.Model):
 class Fixture(models.Model):
 	team1 = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='team1')
 	team2 = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='team2')
-	winner = models.ForeignKey(Team)
+	team1_points = models.IntegerField(default=0)		
+	team2_points = models.IntegerField(default=0)		
 
 	def __str__(self):
 		return self.team1.name + " vs " + self.team2.name
