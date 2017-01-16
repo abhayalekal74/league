@@ -1,15 +1,30 @@
 <html>
+	<head>
+		<style>
+			table {
+			    border-collapse: collapse;
+			    width: 100%;
+			}
+
+			th, td {
+			    text-align: left;
+			    padding: 8px;
+			}
+
+			tr:nth-child(even){background-color: #f2f2f2}
+		</style>
+	</head>
 	<body>
 		<h2>Team Standings</h2>
+		<div style="overflow-x:auto;">
 		<table border="1px">
 			<tr>
 				<th>
-					{{context}}
+					Team
 				</th>
 				<th>
 					Wins
 				</th>
-				<th>
 					Loses
 				</th>
 			</tr>
@@ -27,8 +42,9 @@
 			{% endfor %}
 			
 		</table>
-
+		</div>	
 		<h2>Fixtures</h2>
+		<div style="overflow-x:auto;">
 		<table border="1px">
 			<tr>
 				<th>
@@ -42,5 +58,6 @@
 				</th>
 			</tr>
 		</table>
+		</div>
 	</body>
 </html>

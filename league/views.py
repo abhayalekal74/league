@@ -1,9 +1,11 @@
-from django.shortcuts import render
+from django.template import loader
 from models import Team, Fixture
 from django.http import HttpResponse
 
 def index(request):
 	teams = Team.objects.all() 
-	context = dict()
-	context['teams'] = teams
-	return render(request, 'index.html', context)
+	template = loader.get_template('index.html')
+	context = {
+		'teams': teams
+	}
+	return HttpResponse(template.render(context, request))
