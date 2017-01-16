@@ -19,5 +19,6 @@ from . import views
 
 urlpatterns = [
 	url(r'^admin/', admin.site.urls),
-	url(r'^$', views.index, name='index')
+	url(r'^$', views.index, name='index'), 
+	url(r'^fixtures/(?P<w>[0-9]+)$', views.fixtures, name='index')
 ]
